@@ -1,0 +1,57 @@
+vi Editor
+Visual Editor Quick Reference
+
+Text Insert Modes:
+press a to insert text after next character   (press Esc when finished)
+press i to insert text at current position    (press Esc when finished)
+press o to insert text on the next line       (press Esc when finished)
+press O to insert text above the current line (press Esc when finished)
+
+Deleting Text:
+press x to delete character cursor is resting on
+press dd to delete entire line of text  
+press dw to delete a word
+press D to delete from cursor to end of current line
+press dG to delete from cursor to end of file
+
+Merging Text From Existing Files:
+press :r filename to merge text into current file after current line
+
+Cursor Movement:
+press h to move the cursor left one character at a time
+press j to move the cursor down one line
+press k to move the cursor up one line
+press l to move the cursor right one character at a time
+
+Cursor Position:
+press Ctrl g to display line info
+press 1G to move the cursor to the first line of file
+press G to move the cursor to the last line of file
+line#G to move the cursor to a specified line number
+
+String Searches:
+press /string name to perform a string search
+press n to continue search in a forward search
+press N to continue search in a backwards direction
+
+Copy and Paste:
+#of linesyy to copy a number of lines into a temporary buffer
+press yy to copy current lines into a temporary buffer
+press yw to copy current word into a temporary buffer
+press p to paste buffer on next line
+press P to paste buffer above the current line
+
+Saving and Exiting:
+press :w save file
+press :w! to force changes to read only files
+press :w filename to save as a new file
+press :wq save file and exit vi
+press :e! to abandon changes and restore file to original contents
+press :q exit vi
+press :q! exit vi without saving
+
+General Commands:
+press :! to execute a shell command
+press :set to display current options
+press :set all to display all options
+

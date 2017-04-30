@@ -1,0 +1,145 @@
+GNU Emacs Editor
+Editing with Macros Quick Reference
+
+Getting Help:
+press Ctrl-h t for tutorial
+press Ctrl-x k to close tutorial
+press Ctrl-h k open help window for help on keystrokes
+press Ctrl-h f open help window for help on functions
+press Ctrl-x 1 to close help windows
+press Esc-x first letter of extended command 
+             Tab list commands by letter
+press Esc-x arrow up or down for history of commands entered
+
+Aborting Commands:
+press Ctrl-g to abort current command
+
+Exiting Emacs:
+press Ctrl-x Ctrl-c to exit emacs
+
+Shell Commands:
+press Esc-!     to execute a shell command within emacs
+press Ctrl-x o  to switch to shell command output window
+press Ctrl-x 0  to close shell command output window
+
+Major Modes:
+default mode: fundamental-mode - no special features
+press Esc-x mode name <Enter> to switch between modes
+
+Cursor Movement:
+press Ctrl-p to move the cursor up one line
+press Ctrl-n to move the cursor down one line
+press Ctrl-b to move the cursor left one character
+press Ctrl-f to move the cursor right one character
+press Esc # command to move cursor # of times in direction of command
+
+Cursor Position:
+press Ctrl-a to move the cursor to the beginning of the line
+press Ctrl-e to move the cursor to the end of the line
+press Ctrl-v to scroll down
+press Esc-v  to scroll up
+press Esc > to goto the end of the text buffer
+press Esc <  to goto the beginning to the text buffer
+press Esc-x goto-line <Enter> # to goto line specified by #
+press Esc-x goto-char <Enter> # move the cursor # of characters 
+
+Deleting Text:
+press Ctrl-d to delete a character
+press Esc-d  to delete a word
+press Ctrl-k to delete a line
+press Esc # Ctrl-k to delete # of lines
+
+
+Loading Files into Text Buffers:
+press Ctrl-x Ctrl-f to load a file into a text buffer
+press Ctrl-x Ctrl-f first few letters of file Tab to search for match
+
+Closing Text Buffers:
+press Ctrl-x Ctrl-v to close this buffer without saving and load another file
+press Ctrl-x k      to close this text buffer
+
+Merging Text From Existing Files:
+press Ctrl-x i to insert an existing file into this text buffer
+
+Saving Text Buffers:
+press Ctrl-x Ctrl-w to save text buffer as another file name
+press Ctrl-x Ctrl-s to save text buffer under name of original file name
+NOTE: Emacs links original file name to the buffer by default
+press Ctrl-x s to save all text buffers
+
+Working with Text Buffers:
+press Ctrl-x k to delete this entire buffer
+press Ctrl-x h to mark an entire text buffer
+press Ctrl-x b to switch between text buffers
+press Ctrl-x b first few letters of buffer Tab to search for match
+- press Ctrl-x Ctrl-b to list all buffers in a text window
+- press Ctrl-x o to switch to buffer text window
+- press s to mark buffer for save
+- press d to mark buffer for deletion
+- press x to take action on marked buffers
+- press u to unmark buffers
+- press 1 to display buffer
+- press Ctrl-x 0 to close buffer text window
+
+Working with Text Windows:
+press Ctrl-x 2 to split screen into two text windows
+press Ctrl-x o to toggle between text windows
+press Ctrl-x 1 to display this text window full screen
+press Ctrl-x 0 to close this text window
+press Ctrl-x ^ to make this text window larger
+press Esc-x shrink-window <Enter> to make text windows smaller
+press Ctrl-x 4 f to load file in other window
+press Ctrl-x 4 b to select another text buffer in this text window
+
+Cut and Paste:
+press Ctrl-k to cut a line
+press Ctrl-y to paste a line at the current position
+
+Marking text for Cut and Paste:
+- press Ctrl-Space or Ctrl-@ to set mark
+- move cursor to the end of the text you want to cut
+press Ctrl-w   to cut marked text
+press Ctrl-y   to paste cut text at the current cursor position
+press Ctrl-x h to mark an entire text buffer
+
+Marking text for Copy and Paste:
+- press Ctrl-Space or Ctrl-@ to set mark
+- move cursor to the end of the text you want to copy
+press Esc-w  to copy marked text 
+press Ctrl-y to paste text at the current cursor position
+press Ctrl-x h to mark an entire text buffer
+
+Incremental String Search:
+- press Ctrl-s to start incremental forward search
+- search will start as letters are typed in
+- press Ctrl-s to find next occurrence
+- press Enter or Esc to end search
+press Ctrl-r to start incremental backward search
+press Ctrl-g to abort search
+
+Word Search:
+press Esc-x word-search-forward <Enter> word to search for word forward
+press Esc-x word-search-backward <Enter> word to search for word backward
+
+Making Search Case-Sensitive:
+press Esc-x set-variable <Enter> case-fold-search <Enter> nil <Enter>  
+
+Query Search and Replace:
+- press Esc-% string <Enter> replacement string <Enter> to start query replace
+- press y to replace string
+- press n to skip to next occurrence
+- press ! to replace all matches
+- press q to exit query replace
+
+Search and Replace:
+press Esc-x replace-string <Enter> string <Enter> replacement string <Enter>  
+NOTE: this will replace all occurrences without prompting
+
+Macro Definitions:
+- press Ctrl-x ( to start a macro definition
+- every key stroke will be recorded from this point one
+- press Ctrl-x ) to end a macro definition
+- press Ctrl-x e to execute the defined macro
+- press Esc # Ctrl-x e to execute defined macro # of times 
+
+
