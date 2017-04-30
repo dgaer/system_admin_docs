@@ -1,0 +1,24 @@
+TAPE Drive Commands:
+-------------------
+# mt -f /dev/st0 status
+# tar tfvz /dev/st0
+# mt -f /dev/st0 rewind
+# mt -f /dev/st0 compression 1
+# mt -f /dev/st0 defcompression 1
+
+Eject: 
+-----
+mt -f /dev/st0 offline
+
+Local tape unpack:
+-----------------
+# cd /
+# tar xvf /dev/st0
+# tar xvfz /dev/st0
+
+Remote tape unpack:
+------------------
+# mkdir -p /backups/tape_unpack
+# cd /backups/tape_unpack
+# ssh root@server2.example.com "mt -f /dev/st0 rewind; cat /dev/st0" | tar xvf -
+

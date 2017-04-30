@@ -1,0 +1,12 @@
+Use "AT" command example:
+------------------------
+# at 11:30 PM 01/27/2012
+
+at> /bin/rm -f /var/www/html/downloads/tempdistrib.zip
+at> <EOT>
+job 1 at 2012-01-27 23:30
+
+# atq
+
+1	2012-01-27 23:30 a root
+------------------------

@@ -1,0 +1,6 @@
+Xwindows dump
+------------
+
+xwd -out ~/Desktop/s.xwd -display $DISPLAY -root
+convert ~/Desktop/s.xwd s.png
+
