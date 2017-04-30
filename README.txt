@@ -19,7 +19,7 @@ all risks to your operating systems, software, and hardware.
 
 COPYING:
 This documentation and software is distributed for the purpose of
-helping system administrators . This documentation and software can be
+helping system administrators. This documentation and software can be
 freely modified and distributed, but without a warranty of any
 kind. Use of this documentation and software for any purpose is not
 guaranteed. Any third party libraries used to build example programs
@@ -35,13 +35,11 @@ added to the trunk version for next Github release.
 Operating Systems:
 This documentation set is not limited to any specific operating system
 or hardware platform. If there is a operating system or hardware
-platform you wish add to this distribution you can add your own branch
-or open a ticket on Github. 
+platform you wish to add to this distribution you can add your own
+branch or open a ticket on Github. 
 
 Support:
 For all support issues, open a ticket on Github:
 
 https://github.com/dgaer/system_admin_docs/issues
- 
-
  
