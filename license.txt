@@ -1,3 +1,9 @@
+EULA:
+The accuracy of any information in this documentation set is not
+guaranteed. By using this documentation or example programs you assume
+all risks to your operating systems, software, and hardware.
+
+COPYING:
 This documentation and software is distributed for the purpose of
 helping system administrators . This documentation and software can be
 freely modified and distributed, but without a warranty of any
