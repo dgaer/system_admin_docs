@@ -49,7 +49,6 @@ press Esc-d  to delete a word
 press Ctrl-k to delete a line
 press Esc # Ctrl-k to delete # of lines
 
-
 Loading Files into Text Buffers:
 press Ctrl-x Ctrl-f to load a file into a text buffer
 press Ctrl-x Ctrl-f first few letters of file Tab to search for match

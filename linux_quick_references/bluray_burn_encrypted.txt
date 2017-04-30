@@ -1,0 +1,38 @@
+Encrypted Blu-Ray Burning
+Last Modified: 04/07/2017
+
+If you want to setup a key to unlock the disk, from your user account:
+
+> cd ~/.ssh
+> dd if=/dev/urandom of=my_new_bluray_key bs=1 count=256
+
+> sudo su - root
+# mkdir -p /data/iso
+# cd /data/iso
+# truncate --size=25GB diskimg.cfs
+# losetup -a
+# losetup /dev/loop0 diskimg.cfs
+# cryptsetup luksFormat /dev/loop0
+
+Optional: Add the user's bluray key:
+# cryptsetup luksAddKey /dev/loop0 /home/username/.ssh/my_new_bluray_key bs
+
+# cryptsetup luksOpen /dev/loop0 diskimg.cfs
+# mkfs -t ext4 /dev/mapper/diskimg.cfs
+# e2label /dev/mapper/diskimg.cfg ENCBACK
+# mount /dev/mapper/diskimg.cfs /mnt
+
+Copy the data you wish to store in the encrypted image:
+# cd /dir_to_copy
+# rsync -av --force --stats --progress * /mnt/.
+
+Unmount the image:
+# umount /mnt
+# cryptsetup luksClose /dev/mapper/diskimg.cfs
+# losetup -d /dev/loop0  
+# exit
+
+From your user account, burn the bluray:
+> growisofs -Z /dev/sr1=/data/iso/diskimg.cfs
+
+

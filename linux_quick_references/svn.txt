@@ -1,0 +1,92 @@
+First Import Only:
+-----------------
+In your home directory create an SVN folder with a sub-directory of
+the project: 
+
+> mkdir ~/svn
+> mkdir ~/svn/example_dir
+
+Next, move the files and directories to the project directory. In the
+next step the project sub-directory will get imported into the
+repository: 
+
+> cd ~/svn
+> svn import example_dir svn+ssh://server1.example.com/www/svn/example_dir -m "EXAMPLE_DIR Repo First Import"
+
+Listing:
+-------
+
+> svn list --verbose svn+ssh://server1.example.com/www/svn/example_dir
+
+Checking Out a Project:
+----------------------
+Log into your Linux workstation and create the project directory in
+your home directory:
+
+> mkdir -p ~/svn
+> cd ~/svn
+> svn co svn+ssh://server1.example.com/www/svn/example_dir
+
+This will create the “docs” subdirectory and download the all the
+project files.
+ 
+Updating a Project:
+------------------
+Log into your Linux workstation and update from the project directory
+in your home SVN directory:
+
+> cd ~/svn/example_dir
+> svn update
+> svn commit -m “EXAMPLE_DIR Updated”
+
+NOTE: If you add any new sub-directories or files, add them to the
+project and then commit:
+
+> cd ~/svn/example_dir/docs
+> svn update
+> svn add <newdirs>
+> svn add <newfile>
+> svn commit -m “Added new DOC files and DIRs”
+
+Listing Project Contents:
+------------------------
+
+> svn log svn+ssh://server1.example.com/www/svn/example_dir
+
+Checking Out a Previous Version:
+-------------------------------
+> svn co -r 1 svn+ssh://server1.example.com/www/svn/example_dir
+
+Finding missing files in SVN repo:
+-----------------------------------
+> svn status --no-ignore
+> svn status --no-ignore | grep ^I
+> svn status --no-ignore | grep ^I | awk '{ print $2}'
+
+Fix for missing files in SVN repo:
+----------------------------------
+> files=$(svn status --no-ignore | grep ^I | awk '{ print $2}')
+> for i in $files; do svn add $i; done
+> svn status --no-ignore | grep ^I
+
+Find new files to add:
+---------------------
+> svn status --no-ignore | grep ^\\?
+
+Add all files:
+-------------
+> files=$(svn status --no-ignore | grep ^\\? | awk '{ print $2}')
+> for i in $files; do svn add $i; done
+> svn status --no-ignore | grep ^\\?
+
+Resolve SVN conflicts:
+---------------------
+> svn status
+D     C example_dir
+      >   local unversioned, incoming add upon update
+Summary of conflicts:
+  Tree conflicts: 1
+
+> svn resolve --accept working example_dir
+> svn revert example_dir
+> svn status

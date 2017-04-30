@@ -1,0 +1,10 @@
+RSYNC Examples:
+--------------
+RSYNC all file attributes:
+
+> rsync -avAXz --stats --sparse --progress --force www 192.168.1.226:/.
+
+RSYNC without copying perms:
+
+> rsync -lrtuvz --stats --sparse --progress --force www 192.168.1.226:/.
+

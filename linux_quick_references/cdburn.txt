@@ -1,0 +1,44 @@
+Quick reference to make ISO images and burn to CD or DVD
+Last Modified: 04/07/2017
+
+--------------
+QUICK COMMANDS:
+--------------
+<>
+<> mkisofs -r -J -l -D -L -v -V "VolumeName" -o /data/isoimages/myproject.iso source_directory
+<> cdrecord -v speed=16 -sao dev=/dev/sr0 -data /data/isoimages/myproject.iso
+<>
+<> RHEL5 dev=/dev/cdwriter RHEL6 dev=/dev/cdrw RHEL7 /dev/sr0
+<>
+------------
+STEP BY STEP:
+------------
+1.) Make the ISO image:
+
+cd /data/linux/software
+mkisofs -r -J -l -D -L -v -V "VolumeName" -o /data/isoimages/myproject.iso myproject 
+
+2.) Test the image:
+
+sudo su - root
+mkdir -p /mnt/iso
+mount -r -o loop /data/isoimages/myproject.iso /mnt/iso
+ls -lR /mnt/iso | less
+umount /mnt/iso
+
+3.) Burn to CD or DVD:
+
+sudo su - root
+ls -lh /data/isoimages/myproject.iso
+
+700MB or less burn to CD:
+
+cdrecord -v speed=52 -sao dev=/dev/sr0 -data /data/isoimages/myproject.iso
+
++700MB to 4.7GB burn to DVD:
+
+cdrecord -v speed=16 -sao dev=/dev/sr0 -data /data/isoimages/myproject.iso
+
+
+
+

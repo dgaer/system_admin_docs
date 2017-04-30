@@ -1,0 +1,35 @@
+Quick reference to burn to Blu-Ray disks
+Last Modified: 04/07/2017
+
+--------------
+QUICK COMMANDS:
+--------------
+<>
+<> growisofs -Z /dev/sr0 -allow-limited-size -r -J -l -D -L -v -V "VolumeName" myproject  
+<>
+<> RHEL6 dev=/dev/cdrw RHEL7 dev=/dev/sr0
+<>
+--------------
+
+------------
+STEP BY STEP:
+------------
+1.) Burn directory to Blu-Ray disk:
+
+du -cksh myproject
+
++4.7GB to 25GB burn to single-sided BLU-RAY
++25GB to 50GB burn to double-sided BLU-RAY
+
+growisofs -Z /dev/sr1 -allow-limited-size -r -J -l -D -L -v -V "VolumeName" myproject  
+
+2.) Optional, add files later if needed and the disk is not full:
+
+growisofs -M /dev/sr1 -allow-limited-size -r -J -l -D -L -v /more/files
+
+3.) Optional, finalize the disk when full or finished adding content:
+
+growisofs -M /dev/sr1=/dev/zero
+
+------------
+
