@@ -32,6 +32,15 @@ If you wish to contribute to this documentation set, fork a GIT branch
 and add your contributions. All updated documents will be reviewed and
 added to the trunk version for next Github release. 
 
+When submitting documents or example programs do not include any
+personal or real system information. Examples referring to a username
+must use a generic name such as; user1, username1, etc. Never include
+any password information, real names, email addresses, or physical
+addresses. Never include any hostname information or real IP
+addresses. IPv4 address examples should only use private ranges; 10.*, 
+172.16-31.*, 192.168.*. All contributors are responsible for screening
+their documents prior to submitting. 
+
 Operating Systems:
 This documentation set is not limited to any specific operating system
 or hardware platform. If there is a operating system or hardware
