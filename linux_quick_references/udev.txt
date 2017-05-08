@@ -1,0 +1,9 @@
+Get all device info
+-------------------
+# udevadm info --export-db
+
+Get device sections for CD/DVD/Bluray drives
+--------------------------------------------
+# ls -l /dev/sr*
+# udevadm info --export-db | sed -n '/\/block\/sr/,/^$/p'
+
