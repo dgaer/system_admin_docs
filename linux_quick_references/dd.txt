@@ -1,0 +1,19 @@
+DD Optimized Disk Wipe:
+----------------------
+# fisk -l | grep /dev/sd
+# dd if=/dev/zero of=/dev/sdj conv=sync,noerror bs=4096 &> /tmp/dd.out &
+# kill -USR1 'PID listed from above command'
+# cat /dev/tmp/dd.out
+
+Disk speed testing:
+-----------------
+# cd /tmp
+# dd if=/dev/zero of=test.raw bs=64k count=16k conv=fdatasync
+# rm test.raw
+
+Network disk image using the DD command:
+---------------------------------------
+# dd if=/dev/zero of=0bits bs=20M; rm 0bits
+# dd if=/dev/sda | gzip -1 - | ssh user@hostname dd of=image.gz
+# ssh user@hostname dd if=image.gz | gunzip -1 - | dd of=/dev/sda
+

@@ -16,6 +16,9 @@ Caching your GitHub password in Git
 > git config --global credential.helper cache
 > git config --global credential.helper 'cache --timeout=9999'
 
+To reset cached credentials:
+
+> git credential-cache exit
 
 Git, SVN info command
 ---------------------
