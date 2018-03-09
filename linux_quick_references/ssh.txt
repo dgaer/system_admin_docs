@@ -36,3 +36,8 @@ Network disk image using the DD command:
 # dd if=/dev/sda | gzip -1 - | ssh user@hostname dd of=image.gz
 # ssh user@hostname dd if=image.gz | gunzip -1 - | dd of=/dev/sda
 
+
+Remote TAR over SSH for Offsite Backups:
+---------------------------------------
+
+> tar cvfz - srcdir | ssh ifps@nhc-vm-nwps1 "cat - > destfile_$(date +%Y_%m_%d).tar.gz"
